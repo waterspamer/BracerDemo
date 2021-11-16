@@ -1,0 +1,21 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CaptureEnable : Capture {
+
+    public Behaviour Behaviour;
+    //public Component Behaviour;
+    private bool _enabled;
+    
+    protected override void OnFrame() {
+
+        DeclareAndFind(gameObject);
+        if (Behaviour.enabled != _enabled) {
+            //WriteGet().AppendLine($".transform.localRotation = new Quaternion ({transform.rotation.x}f,{transform.rotation.y}f,{transform.rotation.z}f, {transform.rotation.w}f);");
+            WriteGet().AppendLine($".GetComponent<{typeof(Behaviour)}>().enabled = {_enabled};");
+        }
+
+    }
+
+}
