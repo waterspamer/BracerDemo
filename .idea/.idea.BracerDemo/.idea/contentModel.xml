@@ -78,35 +78,6 @@
             </e>
           </e>
         </e>
-        <e p="Replays" t="Include">
-          <e p="Editor" t="Include">
-            <e p="ReplayPC0.cs" t="Include" />
-            <e p="ReplayPC1.cs" t="Include" />
-            <e p="ReplayPC10.cs" t="Include" />
-            <e p="ReplayPC11.cs" t="Include" />
-            <e p="ReplayPC12.cs" t="Include" />
-            <e p="ReplayPC13.cs" t="Include" />
-            <e p="ReplayPC14.cs" t="Include" />
-            <e p="ReplayPC15.cs" t="Include" />
-            <e p="ReplayPC16.cs" t="Include" />
-            <e p="ReplayPC17.cs" t="Include" />
-            <e p="ReplayPC18.cs" t="Include" />
-            <e p="ReplayPC19.cs" t="Include" />
-            <e p="ReplayPC2.cs" t="Include" />
-            <e p="ReplayPC20.cs" t="Include" />
-            <e p="ReplayPC21.cs" t="Include" />
-            <e p="ReplayPC22.cs" t="Include" />
-            <e p="ReplayPC23.cs" t="Include" />
-            <e p="ReplayPC24.cs" t="Include" />
-            <e p="ReplayPC3.cs" t="Include" />
-            <e p="ReplayPC4.cs" t="Include" />
-            <e p="ReplayPC5.cs" t="Include" />
-            <e p="ReplayPC6.cs" t="Include" />
-            <e p="ReplayPC7.cs" t="Include" />
-            <e p="ReplayPC8.cs" t="Include" />
-            <e p="ReplayPC9.cs" t="Include" />
-          </e>
-        </e>
         <e p="TakeBall.cs" t="Include" />
         <e p="Test.cs" t="Include" />
       </e>

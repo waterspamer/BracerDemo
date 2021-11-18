@@ -14,13 +14,15 @@ namespace BracerDemo.Scripts.HandsInteractions
 
         public void SetParent(Transform transform)
         {
-            var localPosition = this.transform.position;
-            var localRotation = this.transform.rotation;
+            var transform2 = this.transform;
+            var localPosition = transform2.position;
+            var localRotation = transform2.rotation;
 
-            
-            this.transform.SetParent(transform);
-            this.transform.position = localPosition;
-            this.transform.rotation = localRotation;
+
+            Transform transform1;
+            (transform1 = this.transform).SetParent(transform);
+            transform1.position = localPosition;
+            transform1.rotation = localRotation;
         }
 
         private Transform _parent;
