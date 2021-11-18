@@ -302,6 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 408280787}
+  - component: {fileID: 408280788}
   m_Layer: 0
   m_Name: HandPivot
   m_TagString: Untagged
@@ -322,8 +323,21 @@ Transform:
   m_Children:
   - {fileID: 1213584006}
   m_Father: {fileID: 1157548557}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -0.636, y: 97.537, z: 163.855}
+--- !u!114 &408280788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408280786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e700dfed9a80b674f840b8c6d6af5f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stickTime: 0.5
 --- !u!1 &482230376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1443,8 @@ GameObject:
   - component: {fileID: 1157548555}
   - component: {fileID: 1157548559}
   - component: {fileID: 1157548558}
+  - component: {fileID: 1157548554}
+  - component: {fileID: 1157548560}
   m_Layer: 0
   m_Name: BracerLeft
   m_TagString: Untagged
@@ -1436,6 +1452,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!54 &1157548554
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157548553}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1157548555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1192493596}
+  - {fileID: 1814093669}
   - {fileID: 408280787}
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1512,7 +1545,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05, y: 0.24, z: 0.11}
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1157548559
 MonoBehaviour:
@@ -1530,6 +1563,101 @@ MonoBehaviour:
   altTracking: {fileID: 1157548556}
   transformHand: {fileID: 1157548557}
   isHolding: 0
+--- !u!114 &1157548560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157548553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6d6ae4a57ae504785911b87b0c3b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherTag: Finish
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1213584007}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GunHandleAim
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 408280788}
+        m_TargetAssemblyTypeName: BracerDemo.Scripts.HandsInteractions.HandsMovement,
+          Assembly-CSharp
+        m_MethodName: SetParent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1422551182}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 408280788}
+        m_TargetAssemblyTypeName: BracerDemo.Scripts.HandsInteractions.HandsMovement,
+          Assembly-CSharp
+        m_MethodName: StickToTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1422551182}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerExitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1213584007}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: GunHandleAimReverse
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 408280788}
+        m_TargetAssemblyTypeName: BracerDemo.Scripts.HandsInteractions.HandsMovement,
+          Assembly-CSharp
+        m_MethodName: SetParent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1157548557}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 408280788}
+        m_TargetAssemblyTypeName: BracerDemo.Scripts.HandsInteractions.HandsMovement,
+          Assembly-CSharp
+        m_MethodName: StickToTarget
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1814093669}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1192493595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2397,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fea3af5fdb9664e498ac2a59ec72b4b3, type: 3}
   m_PrefabInstance: {fileID: 1365740964}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1422551181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1422551182}
+  - component: {fileID: 1422551183}
+  m_Layer: 0
+  m_Name: LeftAimingArmTarget
+  m_TagString: Finish
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1422551182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422551181}
+  m_LocalRotation: {x: -0.28760907, y: -0.7582756, z: -0.544747, w: 0.21342397}
+  m_LocalPosition: {x: 0.0048930645, y: -0.039839387, z: 0.18067165}
+  m_LocalScale: {x: 0.8000008, y: -0.8000008, z: 0.8000007}
+  m_Children: []
+  m_Father: {fileID: 543450652274636291}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: -0.636, y: 97.537, z: 163.855}
+--- !u!65 &1422551183
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422551181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13, y: 0.1, z: 0.09}
+  m_Center: {x: 0.06, y: -0.03, z: 0.03}
 --- !u!1001 &1509852751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2373,7 +2545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 543450652274636291}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 1.879, y: 99.979, z: 195.753}
 --- !u!1 &1624873575
 GameObject:
@@ -2468,6 +2640,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -181.28, z: 0}
+--- !u!1 &1814093668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814093669}
+  m_Layer: 0
+  m_Name: StartPivot
+  m_TagString: Finish
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1814093669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814093668}
+  m_LocalRotation: {x: 0.7440773, y: 0.10922597, z: 0.653147, w: 0.088417895}
+  m_LocalPosition: {x: -0.0059000067, y: 0.02130001, z: -0.057299994}
+  m_LocalScale: {x: 0.80000067, y: -0.8000005, z: 0.80000055}
+  m_Children: []
+  m_Father: {fileID: 1157548557}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -0.636, y: 97.537, z: 163.855}
 --- !u!1001 &2079495581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2570,6 +2772,7 @@ GameObject:
   - component: {fileID: 1464212329515429}
   - component: {fileID: 1464212329515430}
   - component: {fileID: 1464212329515432}
+  - component: {fileID: 1464212329515433}
   m_Layer: 0
   m_Name: BracerRight
   m_TagString: Untagged
@@ -2717,6 +2920,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1464212329515433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464212329515428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6d6ae4a57ae504785911b87b0c3b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherTag: 
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &4064153221178542
 Transform:
   m_ObjectHideFlags: 0
@@ -2840,6 +3062,7 @@ Transform:
   - {fileID: 1808319682976143400}
   - {fileID: 8848907134588738764}
   - {fileID: 2942842481471196242}
+  - {fileID: 1422551182}
   - {fileID: 1558319086}
   m_Father: {fileID: 0}
   m_RootOrder: 1
